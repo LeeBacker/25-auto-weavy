@@ -1,0 +1,6 @@
+build:
+  python_version: "3.12"
+  python_packages:
+    - "fal-client>=0.7,<1"
+    - "requests>=2.32,<3"
+predict: "predict.py:Predictor"
