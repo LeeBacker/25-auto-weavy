@@ -1,0 +1,16 @@
+
+name: Publish Replicate Cog model
+
+on:
+  workflow_dispatch:
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: replicate/setup-cog@v2
+        with:
+          token: ${{ secrets.REPLICATE_CLI_AUTH_TOKEN }}
+      - name: Push model to Replicate
+        run: cog push "r8.im/leebacker/25-auto-weavy"
